@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\Aufgabe1\1.2\bin\Debug\netcoreapp2.0\1.2.deps.json
+D:\GitHub\softwaredesign\Aufgabe1\1.2\bin\Debug\netcoreapp2.0\1.2.runtimeconfig.json
+D:\GitHub\softwaredesign\Aufgabe1\1.2\bin\Debug\netcoreapp2.0\1.2.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\Aufgabe1\1.2\bin\Debug\netcoreapp2.0\1.2.dll
+D:\GitHub\softwaredesign\Aufgabe1\1.2\bin\Debug\netcoreapp2.0\1.2.pdb
+D:\GitHub\softwaredesign\Aufgabe1\1.2\obj\Debug\netcoreapp2.0\1.2.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\Aufgabe1\1.2\obj\Debug\netcoreapp2.0\1.2.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\Aufgabe1\1.2\obj\Debug\netcoreapp2.0\1.2.AssemblyInfo.cs
+D:\GitHub\softwaredesign\Aufgabe1\1.2\obj\Debug\netcoreapp2.0\1.2.dll
+D:\GitHub\softwaredesign\Aufgabe1\1.2\obj\Debug\netcoreapp2.0\1.2.pdb
