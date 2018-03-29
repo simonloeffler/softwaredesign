@@ -9,7 +9,6 @@ namespace Aufgabe1
             try{
                 var type = args[0];
                 var size = double.Parse(args[1]);
-                if(type != null && size != 0)
                     switch(type){
                         case "w":
                             Console.WriteLine(GetCubeInfo(size));
@@ -19,6 +18,9 @@ namespace Aufgabe1
                             break;
                         case "o":
                             Console.WriteLine(GetOctInfo(size));
+                            break;
+                        default:
+                            Console.WriteLine("Bitte Typ korrekt eingeben!");
                             break;
                     }
 
