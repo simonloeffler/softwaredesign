@@ -9,29 +9,18 @@ namespace Aufgabe1
             try{
                 var type = args[0];
                 var size = double.Parse(args[1]);
-                double surface = 0;
-                double volume = 0;
-                string info = "";
                 if(type != null && size != 0)
                     switch(type){
                         case "w":
-                            surface=getCubeSurface(size);
-                            volume=getCubeVolume(size);
-                            info = GetCubeInfo(surface, volume);
+                            Console.WriteLine(GetCubeInfo(size));
                             break;
                         case "k":
-                            surface=getBallSurface(size);
-                            volume=getBallVolume(size);
-                            info = GetBallInfo(surface, volume);
+                            Console.WriteLine(GetBallInfo(size));
                             break;
                         case "o":
-                            surface=getOctSurface(size);
-                            volume=getOctVolume(size);
-                            info = GetOctInfo(surface, volume);
+                            Console.WriteLine(GetOctInfo(size));
                             break;
                     }
-                
-                Console.WriteLine(info);
 
             } catch(Exception){
                 Console.WriteLine("Eingabe fehlerhaft");
@@ -39,17 +28,22 @@ namespace Aufgabe1
 
         }
 
-        public static string GetCubeInfo(double surface, double volume){
-            return "Würfel: A=" + Math.Round(surface, 2) + " | V=" + Math.Round(volume, 2);
+        #region Infos
+        public static string GetCubeInfo(double size){
+            return "Würfel: A=" + Math.Round(getCubeSurface(size), 2) + " | V=" + Math.Round(getCubeVolume(size), 2);
         }
 
-        public static string GetBallInfo(double surface, double volume){
-            return "Kugel: A=" + Math.Round(surface, 2) + " | V=" + Math.Round(volume, 2);
+        public static string GetBallInfo(double size){
+            return "Kugel: A=" + Math.Round(getBallSurface(size), 2) + " | V=" + Math.Round(getBallVolume(size), 2);
         }
 
-        public static string GetOctInfo(double surface, double volume){
-            return "Oktaeder: A=" + Math.Round(surface, 2) + " | V=" + Math.Round(volume, 2);
+        public static string GetOctInfo(double size){
+            return "Oktaeder: A=" + Math.Round(getOctSurface(size), 2) + " | V=" + Math.Round(getOctVolume(size), 2);
         }
+
+        #endregion
+
+        #region Maths
 
         public static double getCubeSurface(double size){
             return 6*Math.Pow(size, 2);
@@ -71,5 +65,7 @@ namespace Aufgabe1
         public static double getOctVolume(double size){
             return (Math.Sqrt(2)*Math.Pow(size, 3))/3;
         }
+
+        #endregion
     }
 }
