@@ -1,0 +1,15 @@
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\bin\Debug\netcoreapp2.0\softwaredesign.deps.json
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\bin\Debug\netcoreapp2.0\softwaredesign.runtimeconfig.json
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\bin\Debug\netcoreapp2.0\softwaredesign.runtimeconfig.dev.json
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\bin\Debug\netcoreapp2.0\softwaredesign.dll
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\bin\Debug\netcoreapp2.0\softwaredesign.pdb
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.csproj.CoreCompileInputs.cache
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.AssemblyInfoInputs.cache
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.AssemblyInfo.cs
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.dll
+c:\Users\benni\Desktop\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.pdb
+C:\Users\benni\Desktop\Semester 4\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.csproj.CoreCompileInputs.cache
+C:\Users\benni\Desktop\Semester 4\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.AssemblyInfoInputs.cache
+C:\Users\benni\Desktop\Semester 4\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.AssemblyInfo.cs
+C:\Users\benni\Desktop\Semester 4\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.dll
+C:\Users\benni\Desktop\Semester 4\Softwaredesign\softwaredesign\obj\Debug\netcoreapp2.0\softwaredesign.pdb
