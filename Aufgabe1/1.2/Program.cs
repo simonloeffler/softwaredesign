@@ -11,7 +11,7 @@ namespace _1._2
 
         static void Main(string[] args)
         {
-            string[] poem = new string[subjects.Length];
+            string[] poem = new string[subjects.Length]; //only if: subjects.Length == verbs.Length == objects.Length => asumed in this task
             for (int i = 0; i < poem.Length; i++)
             {
                 poem[i] = GetVerse(poem, i);
