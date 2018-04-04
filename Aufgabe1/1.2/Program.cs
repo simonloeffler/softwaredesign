@@ -11,7 +11,7 @@ namespace _1._2
 
         static void Main(string[] args)
         {
-            string[] poem = new string[5];
+            string[] poem = new string[subjects.Length];
             for (int i = 0; i < poem.Length; i++)
             {
                 poem[i] = GetVerse(poem, i);
