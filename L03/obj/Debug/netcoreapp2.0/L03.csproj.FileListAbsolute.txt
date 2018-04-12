@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\L03\bin\Debug\netcoreapp2.0\L03.deps.json
+D:\GitHub\softwaredesign\L03\bin\Debug\netcoreapp2.0\L03.runtimeconfig.json
+D:\GitHub\softwaredesign\L03\bin\Debug\netcoreapp2.0\L03.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\L03\bin\Debug\netcoreapp2.0\L03.dll
+D:\GitHub\softwaredesign\L03\bin\Debug\netcoreapp2.0\L03.pdb
+D:\GitHub\softwaredesign\L03\obj\Debug\netcoreapp2.0\L03.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\L03\obj\Debug\netcoreapp2.0\L03.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\L03\obj\Debug\netcoreapp2.0\L03.AssemblyInfo.cs
+D:\GitHub\softwaredesign\L03\obj\Debug\netcoreapp2.0\L03.dll
+D:\GitHub\softwaredesign\L03\obj\Debug\netcoreapp2.0\L03.pdb
