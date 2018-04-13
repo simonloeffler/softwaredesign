@@ -16,7 +16,7 @@ namespace Debugging
         {
             Person root = Familytree.BuildTree();
 
-            Person found = Familytree.FindPersonByAge(root, 100, 110);
+            Person found = Familytree.FindPersonByAge(root, 90, 100);
 
             WriteLine(found);
         }

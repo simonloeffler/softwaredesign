@@ -24,7 +24,7 @@ namespace Debugging
         public static Person Find(Person person)
         {
             Person ret = null;
-            if (person.LastName == "Battenberg")
+            if (person.LastName == "ElGreco")
                 return person;
             if(person.Mom != null)
                 ret = Find(person.Mom);
@@ -40,13 +40,13 @@ namespace Debugging
             Person ret = null;
             int age = DateTime.Now.Year - person.DateOfBirth.Year;
             if (age >= minage && age <= maxage)
-                return person;
+                return person; 
             if(person.Mom != null)
-                ret = Find(person.Mom);
+                ret = FindPersonByAge(person.Mom, minage, maxage);
             if (ret != null)
                 return ret;
             if(person.Dad != null)
-                ret = Find(person.Dad);
+                ret = FindPersonByAge(person.Dad, minage, maxage);
             return ret;
         }
 

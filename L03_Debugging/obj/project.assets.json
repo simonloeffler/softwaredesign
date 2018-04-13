@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\SoftwaredesignMaterial\\L03_Debugging\\Debugging.csproj",
+      "projectUniqueName": "D:\\GitHub\\softwaredesign\\L03_Debugging\\Debugging.csproj",
       "projectName": "Debugging",
-      "projectPath": "D:\\GitHub\\SoftwaredesignMaterial\\L03_Debugging\\Debugging.csproj",
+      "projectPath": "D:\\GitHub\\softwaredesign\\L03_Debugging\\Debugging.csproj",
       "packagesPath": "C:\\Users\\DSD\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\SoftwaredesignMaterial\\L03_Debugging\\obj\\",
+      "outputPath": "D:\\GitHub\\softwaredesign\\L03_Debugging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

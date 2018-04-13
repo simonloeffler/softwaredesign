@@ -8,3 +8,13 @@ D:\GitHub\SoftwaredesignMaterial\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging
 D:\GitHub\SoftwaredesignMaterial\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfo.cs
 D:\GitHub\SoftwaredesignMaterial\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.dll
 D:\GitHub\SoftwaredesignMaterial\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.pdb
+D:\GitHub\softwaredesign\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.deps.json
+D:\GitHub\softwaredesign\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.json
+D:\GitHub\softwaredesign\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.dll
+D:\GitHub\softwaredesign\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.pdb
+D:\GitHub\softwaredesign\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfo.cs
+D:\GitHub\softwaredesign\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.dll
+D:\GitHub\softwaredesign\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.pdb
