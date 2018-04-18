@@ -16,6 +16,7 @@ namespace _1._2
             {
                 poem[i] = GetVerse(poem, i);
             }
+            
             for (int i = 0; i < poem.Length; i++)
             {
                 Console.WriteLine(poem[i]);
@@ -29,23 +30,34 @@ namespace _1._2
             string ver = verbs[rnd.Next(verbs.Length)];
             string obj = objects[rnd.Next(objects.Length)];
 
-            if (line==0){
+            if (line==0)
+            {
                 return sub + " " + ver + " " + obj;
-            }else{
-                for (int i = 0; i < line; i++){
-                    if (poem[i].Contains(sub)){
+            }
+            else
+            {
+                for (int i = 0; i < line; i++)
+                {
+                    if (poem[i].Contains(sub))
+                    {
                         sub = subjects[rnd.Next(subjects.Length)];
                         i = -1;
                     }
                 }
-                for (int i = 0; i < line; i++){
-                    if (poem[i].Contains(ver)){
+
+                for (int i = 0; i < line; i++)
+                {
+                    if (poem[i].Contains(ver))
+                    {
                         ver = verbs[rnd.Next(verbs.Length)];
                         i = -1;
                     }
                 }
-                for (int i = 0; i < line; i++){
-                    if (poem[i].Contains(obj)){
+
+                for (int i = 0; i < line; i++)
+                {
+                    if (poem[i].Contains(obj))
+                    {
                         obj = objects[rnd.Next(objects.Length)];
                         i = -1;
                     }
