@@ -10,6 +10,7 @@ namespace Aufgabe1
             {
                 var type = args[0];
                 var size = double.Parse(args[1]);
+                    //Check cases: w=Würfel(Cube), k=Kugel(Ball), o=Oktaeder(Oct)
                     switch(type)
                     {
                         case "w":

@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\softwaredesign\\Aufgabe1\\1.1\\Aufgabe1.csproj",
-      "projectName": "Aufgabe1",
-      "projectPath": "D:\\GitHub\\softwaredesign\\Aufgabe1\\1.1\\Aufgabe1.csproj",
+      "projectUniqueName": "D:\\GitHub\\softwaredesign\\L04_CleanCode\\L04_CleanCode.csproj",
+      "projectName": "L04_CleanCode",
+      "projectPath": "D:\\GitHub\\softwaredesign\\L04_CleanCode\\L04_CleanCode.csproj",
       "packagesPath": "C:\\Users\\DSD\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\softwaredesign\\Aufgabe1\\1.1\\obj\\",
+      "outputPath": "D:\\GitHub\\softwaredesign\\L04_CleanCode\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
