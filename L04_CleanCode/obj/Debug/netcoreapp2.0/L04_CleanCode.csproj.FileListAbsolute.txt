@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\L04_CleanCode\bin\Debug\netcoreapp2.0\L04_CleanCode.deps.json
+D:\GitHub\softwaredesign\L04_CleanCode\bin\Debug\netcoreapp2.0\L04_CleanCode.runtimeconfig.json
+D:\GitHub\softwaredesign\L04_CleanCode\bin\Debug\netcoreapp2.0\L04_CleanCode.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\L04_CleanCode\bin\Debug\netcoreapp2.0\L04_CleanCode.dll
+D:\GitHub\softwaredesign\L04_CleanCode\bin\Debug\netcoreapp2.0\L04_CleanCode.pdb
+D:\GitHub\softwaredesign\L04_CleanCode\obj\Debug\netcoreapp2.0\L04_CleanCode.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\L04_CleanCode\obj\Debug\netcoreapp2.0\L04_CleanCode.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\L04_CleanCode\obj\Debug\netcoreapp2.0\L04_CleanCode.AssemblyInfo.cs
+D:\GitHub\softwaredesign\L04_CleanCode\obj\Debug\netcoreapp2.0\L04_CleanCode.dll
+D:\GitHub\softwaredesign\L04_CleanCode\obj\Debug\netcoreapp2.0\L04_CleanCode.pdb

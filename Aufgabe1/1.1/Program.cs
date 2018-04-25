@@ -6,10 +6,13 @@ namespace Aufgabe1
     {
         static void Main(string[] args)
         {
-            try{
+            try
+            {
                 var type = args[0];
                 var size = double.Parse(args[1]);
-                    switch(type){
+                    //Check cases: w=Würfel(Cube), k=Kugel(Ball), o=Oktaeder(Oct)
+                    switch(type)
+                    {
                         case "w":
                             Console.WriteLine(GetCubeInfo(size));
                             break;
@@ -24,22 +27,26 @@ namespace Aufgabe1
                             break;
                     }
 
-            } catch(Exception){
+            } catch(Exception)
+            {
                 Console.WriteLine("Eingabe fehlerhaft");
             }
 
         }
 
         #region Infos
-        public static string GetCubeInfo(double size){
+        public static string GetCubeInfo(double size)
+        {
             return "Würfel: A=" + Math.Round(getCubeSurface(size), 2) + " | V=" + Math.Round(getCubeVolume(size), 2);
         }
 
-        public static string GetBallInfo(double size){
+        public static string GetBallInfo(double size)
+        {
             return "Kugel: A=" + Math.Round(getBallSurface(size), 2) + " | V=" + Math.Round(getBallVolume(size), 2);
         }
 
-        public static string GetOctInfo(double size){
+        public static string GetOctInfo(double size)
+        {
             return "Oktaeder: A=" + Math.Round(getOctSurface(size), 2) + " | V=" + Math.Round(getOctVolume(size), 2);
         }
 
@@ -47,24 +54,30 @@ namespace Aufgabe1
 
         #region Maths
 
-        public static double getCubeSurface(double size){
+        public static double getCubeSurface(double size)
+        {
             return 6*Math.Pow(size, 2);
         }
-        public static double getCubeVolume(double size){
+        public static double getCubeVolume(double size)
+        {
             return Math.Pow(size, 3);
         }
 
-        public static double getBallSurface(double size){
+        public static double getBallSurface(double size)
+        {
             return Math.PI * Math.Pow(size, 2);
         }
-        public static double getBallVolume(double size){
+        public static double getBallVolume(double size)
+        {
             return (Math.PI * Math.Pow(size, 3))/6;
         }
 
-        public static double getOctSurface(double size){
+        public static double getOctSurface(double size)
+        {
             return 2*Math.Sqrt(3)*Math.Pow(size, 2);
         }
-        public static double getOctVolume(double size){
+        public static double getOctVolume(double size)
+        {
             return (Math.Sqrt(2)*Math.Pow(size, 3))/3;
         }
 
