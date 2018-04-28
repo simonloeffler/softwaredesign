@@ -1,0 +1,10 @@
+F:\GitHub\softwaredesign\L05_Tree\bin\Debug\netcoreapp2.0\L05_Tree.deps.json
+F:\GitHub\softwaredesign\L05_Tree\bin\Debug\netcoreapp2.0\L05_Tree.runtimeconfig.json
+F:\GitHub\softwaredesign\L05_Tree\bin\Debug\netcoreapp2.0\L05_Tree.runtimeconfig.dev.json
+F:\GitHub\softwaredesign\L05_Tree\bin\Debug\netcoreapp2.0\L05_Tree.dll
+F:\GitHub\softwaredesign\L05_Tree\bin\Debug\netcoreapp2.0\L05_Tree.pdb
+F:\GitHub\softwaredesign\L05_Tree\obj\Debug\netcoreapp2.0\L05_Tree.csproj.CoreCompileInputs.cache
+F:\GitHub\softwaredesign\L05_Tree\obj\Debug\netcoreapp2.0\L05_Tree.AssemblyInfoInputs.cache
+F:\GitHub\softwaredesign\L05_Tree\obj\Debug\netcoreapp2.0\L05_Tree.AssemblyInfo.cs
+F:\GitHub\softwaredesign\L05_Tree\obj\Debug\netcoreapp2.0\L05_Tree.dll
+F:\GitHub\softwaredesign\L05_Tree\obj\Debug\netcoreapp2.0\L05_Tree.pdb
