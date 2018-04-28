@@ -3,55 +3,6 @@ using System.Collections.Generic;
 
 namespace L05_Tree
 {
-    public class Tree<TreeType>
-    {        
-        public TreeNode<TreeType> CreateNode(TreeType data)
-        {
-            TreeNode<TreeType> newNode = new TreeNode<TreeType>
-            {
-                Data = data
-            };
-            return newNode;
-        }
-    }
-
-    public class TreeNode<NodeType>
-    {
-        public NodeType Data;
-        public TreeNode<NodeType> Parent;
-        public List<TreeNode<NodeType>> Children = new List<TreeNode<NodeType>>();
-
-        public void AppendChild(TreeNode<NodeType> child)
-        {
-            Children.Add(child);
-        }
-
-        public void RemoveChild(TreeNode<NodeType> child)
-        {
-            Children.Remove(child);
-        }
-
-        public void PrintTree()
-        {
-            int stepCounter = 1;
-            Console.WriteLine(Data);
-            RecPrint(stepCounter);
-        }
-
-        public void RecPrint(int stepCounter)
-        {
-            string depth = "";
-            for(int i = 0; i < stepCounter; i++ )
-                depth += "*";
-
-            foreach(TreeNode<NodeType> child in Children)
-            {
-                Console.WriteLine(depth + child.Data);
-                child.RecPrint(stepCounter +1);
-            }
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -73,6 +24,49 @@ namespace L05_Tree
             child1.RemoveChild(grand12);
 
             root.PrintTree();  
+        }
+    }
+
+    public class Tree<Type>
+    {       
+        public List<TreeNode<Type>> Nodes = new List<TreeNode<Type>>(); 
+        public TreeNode<Type> CreateNode(Type data)
+        {
+            TreeNode<Type> newNode = new TreeNode<Type>
+            {
+                Data = data
+            };
+            Nodes.Add(newNode);
+            return newNode;
+        }
+    }
+
+    public class TreeNode<Type>
+    {
+        public Type Data;
+        public TreeNode<Type> Parent;
+        public List<TreeNode<Type>> Children = new List<TreeNode<Type>>();
+
+        public void AppendChild(TreeNode<Type> child)
+        {
+            Children.Add(child);
+        }
+
+        public void RemoveChild(TreeNode<Type> child)
+        {
+            Children.Remove(child);
+        }
+
+        public void PrintTree(int tierCounter=0)
+        {
+            string depth = "";
+            for(int i = 1; i <= tierCounter; i++ )
+                depth += "*";
+
+            Console.WriteLine(depth + Data);
+
+            foreach(TreeNode<Type> child in Children)
+                child.PrintTree(tierCounter +1);
         }
     }
 }
