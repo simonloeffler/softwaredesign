@@ -11,8 +11,10 @@ namespace L05_Tree
             var root = tree.CreateNode("root");
             var child1 = tree.CreateNode("child1");
             var child2 = tree.CreateNode("child2");
+            var child3 = tree.CreateNode("child2");
             root.AppendChild(child1);
             root.AppendChild(child2);
+            root.AppendChild(child3);
             var grand11 = tree.CreateNode("grand11");
             var grand12 = tree.CreateNode("grand12");
             var grand13 = tree.CreateNode("grand13");
@@ -23,6 +25,8 @@ namespace L05_Tree
             child2.AppendChild(grand21);
             child1.RemoveChild(grand12);
 
+            //tree.Find("child2");
+            var test = (tree.Find("child2"));
             root.PrintTree();  
         }
     }
@@ -38,6 +42,11 @@ namespace L05_Tree
             };
             Nodes.Add(newNode);
             return newNode;
+        }
+
+        public List<TreeNode<Type>> Find (Type data)
+        {
+            return (Nodes.FindAll(x => x.Data.Equals(data)));
         }
     }
 
