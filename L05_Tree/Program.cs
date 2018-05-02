@@ -44,9 +44,9 @@ namespace L05_Tree
             return newNode;
         }
 
-        public List<TreeNode<Type>> Find (Type data)
+        public List<TreeNode<Type>> Find (Type search)
         {
-            return (Nodes.FindAll(x => x.Data.Equals(data)));
+            return (Nodes.FindAll(x => x.Data.Equals(search)));
         }
     }
 
