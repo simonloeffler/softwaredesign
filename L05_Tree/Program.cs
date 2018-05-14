@@ -24,9 +24,11 @@ namespace L05_Tree
             var grand21 = tree.CreateNode("grand21");
             child2.AppendChild(grand21);
             child1.RemoveChild(grand12);
+            //root.RemoveChild(child3);
 
             //tree.Find("child2");
             var test = (tree.Find("child2"));
+            var results = root.FindFromNode("child2");
             root.PrintTree();  
         }
     }
@@ -38,7 +40,8 @@ namespace L05_Tree
         {
             TreeNode<Type> newNode = new TreeNode<Type>
             {
-                Data = data
+                Data = data,
+                Tree = this
             };
             Nodes.Add(newNode);
             return newNode;
@@ -55,6 +58,7 @@ namespace L05_Tree
         public Type Data;
         public TreeNode<Type> Parent;
         public List<TreeNode<Type>> Children = new List<TreeNode<Type>>();
+        public Tree<Type> Tree;
 
         public void AppendChild(TreeNode<Type> child)
         {
@@ -64,6 +68,7 @@ namespace L05_Tree
         public void RemoveChild(TreeNode<Type> child)
         {
             Children.Remove(child);
+            child.Tree.Nodes.Remove(child);
         }
 
         public void PrintTree(int tierCounter=0)
@@ -76,6 +81,20 @@ namespace L05_Tree
 
             foreach(TreeNode<Type> child in Children)
                 child.PrintTree(tierCounter +1);
+        }
+
+        public List<TreeNode<Type>> FindFromNode (Type search, List<TreeNode<Type>> results = null)
+        {
+            if (results == null)
+                results = new List<TreeNode<Type>>();
+
+            if(this.Data.Equals(search))
+                results.Add(this);
+
+            foreach(TreeNode<Type> child in Children)
+                child.FindFromNode(search, results);
+
+            return results;
         }
     }
 }
