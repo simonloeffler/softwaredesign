@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.deps.json
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.runtimeconfig.json
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.dll
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.pdb
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.AssemblyInfo.cs
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.dll
+D:\GitHub\softwaredesign\L07_DesignPatterns\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.pdb
