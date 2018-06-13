@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\Modules\Calculator\bin\Debug\netcoreapp2.0\Calculator.deps.json
+D:\GitHub\softwaredesign\Modules\Calculator\bin\Debug\netcoreapp2.0\Calculator.runtimeconfig.json
+D:\GitHub\softwaredesign\Modules\Calculator\bin\Debug\netcoreapp2.0\Calculator.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\Modules\Calculator\bin\Debug\netcoreapp2.0\Calculator.dll
+D:\GitHub\softwaredesign\Modules\Calculator\bin\Debug\netcoreapp2.0\Calculator.pdb
+D:\GitHub\softwaredesign\Modules\Calculator\obj\Debug\netcoreapp2.0\Calculator.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\Modules\Calculator\obj\Debug\netcoreapp2.0\Calculator.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\Modules\Calculator\obj\Debug\netcoreapp2.0\Calculator.AssemblyInfo.cs
+D:\GitHub\softwaredesign\Modules\Calculator\obj\Debug\netcoreapp2.0\Calculator.dll
+D:\GitHub\softwaredesign\Modules\Calculator\obj\Debug\netcoreapp2.0\Calculator.pdb

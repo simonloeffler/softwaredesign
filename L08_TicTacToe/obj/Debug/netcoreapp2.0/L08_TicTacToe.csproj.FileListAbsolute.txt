@@ -1,0 +1,10 @@
+D:\GitHub\softwaredesign\L08_TicTacToe\bin\Debug\netcoreapp2.0\L08_TicTacToe.deps.json
+D:\GitHub\softwaredesign\L08_TicTacToe\bin\Debug\netcoreapp2.0\L08_TicTacToe.runtimeconfig.json
+D:\GitHub\softwaredesign\L08_TicTacToe\bin\Debug\netcoreapp2.0\L08_TicTacToe.runtimeconfig.dev.json
+D:\GitHub\softwaredesign\L08_TicTacToe\bin\Debug\netcoreapp2.0\L08_TicTacToe.dll
+D:\GitHub\softwaredesign\L08_TicTacToe\bin\Debug\netcoreapp2.0\L08_TicTacToe.pdb
+D:\GitHub\softwaredesign\L08_TicTacToe\obj\Debug\netcoreapp2.0\L08_TicTacToe.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\L08_TicTacToe\obj\Debug\netcoreapp2.0\L08_TicTacToe.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\L08_TicTacToe\obj\Debug\netcoreapp2.0\L08_TicTacToe.AssemblyInfo.cs
+D:\GitHub\softwaredesign\L08_TicTacToe\obj\Debug\netcoreapp2.0\L08_TicTacToe.dll
+D:\GitHub\softwaredesign\L08_TicTacToe\obj\Debug\netcoreapp2.0\L08_TicTacToe.pdb

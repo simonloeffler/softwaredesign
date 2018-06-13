@@ -1,0 +1,8 @@
+D:\GitHub\softwaredesign\Modules\Operations\bin\Debug\netstandard2.0\Operations.deps.json
+D:\GitHub\softwaredesign\Modules\Operations\bin\Debug\netstandard2.0\Operations.dll
+D:\GitHub\softwaredesign\Modules\Operations\bin\Debug\netstandard2.0\Operations.pdb
+D:\GitHub\softwaredesign\Modules\Operations\obj\Debug\netstandard2.0\Operations.csproj.CoreCompileInputs.cache
+D:\GitHub\softwaredesign\Modules\Operations\obj\Debug\netstandard2.0\Operations.AssemblyInfoInputs.cache
+D:\GitHub\softwaredesign\Modules\Operations\obj\Debug\netstandard2.0\Operations.AssemblyInfo.cs
+D:\GitHub\softwaredesign\Modules\Operations\obj\Debug\netstandard2.0\Operations.dll
+D:\GitHub\softwaredesign\Modules\Operations\obj\Debug\netstandard2.0\Operations.pdb
