@@ -172,7 +172,8 @@ namespace Abschlussaufgabe___TextAdventure
 
             #region Player
 
-            Player = new Player("Player", "That's me!", 100, 5, GetRoomByName("Yard"));
+            Player.Create("Player", "That's me!", 100, 5, GetRoomByName("Yard"));
+            Player = Player.Instance;
 
             #endregion
 

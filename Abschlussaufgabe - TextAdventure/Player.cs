@@ -6,13 +6,15 @@ namespace Abschlussaufgabe___TextAdventure
 {
     class Player: Creature
     {
+        private static Player _instance;
+
         public List<PlayerDialogModel> Dialogs {get; set;} = new List<PlayerDialogModel>();
         public Room CurrentRoom {get; private set;}
         public int BaseDamage {get; private set;}
         public Weapon EquippedWeapon {get; private set;}
         public int MaxHealth {get; private set;}
 
-        public Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom){
+        private Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom){
             Name = name;
             Description = description;
             MaxHealth = maxHealth;
@@ -20,6 +22,23 @@ namespace Abschlussaufgabe___TextAdventure
             BaseDamage = baseDamage;
             Damage = BaseDamage;
             CurrentRoom = currentRoom;
+        }
+
+        public static void Create (string name, string description, int maxHealth, int baseDamage, Room currentRoom)
+        {
+            if (_instance != null)
+                throw new Exception ("Object already created!");
+            _instance = new Player (name, description, maxHealth, baseDamage, currentRoom);
+        }
+
+        public static Player Instance
+        {
+            get
+            {
+                if(_instance == null)
+                    throw new Exception ("Object not created!");
+                return _instance;
+            }
         }
 
         #region PlayerActions
