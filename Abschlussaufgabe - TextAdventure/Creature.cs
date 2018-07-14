@@ -7,7 +7,7 @@ namespace Abschlussaufgabe___TextAdventure
     {
         public int Health {get; protected set;}
         public int Damage {get; protected set;}
-        public List<Item> Inventory = new List<Item>();
+        public List<Item> Inventory {get; set;} = new List<Item>();
 
         public void Fight(Player player, NPC enemy)
         {

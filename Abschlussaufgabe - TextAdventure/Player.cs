@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Abschlussaufgabe___TextAdventure
 {
     class Player: Creature
     {
-        public List<PlayerDialogModel> Dialogs = new List<PlayerDialogModel>();
+        public List<PlayerDialogModel> Dialogs {get; set;} = new List<PlayerDialogModel>();
         public Room CurrentRoom {get; private set;}
         public int BaseDamage {get; private set;}
         public Weapon EquippedWeapon {get; private set;}
@@ -32,7 +33,7 @@ namespace Abschlussaufgabe___TextAdventure
             Console.WriteLine("'loot' - to loot a crate or a corpse");
             Console.WriteLine("'take <name of an item in the room>' - to pick an item up");
             Console.WriteLine("'drop <name of an item in your inventory' - to drop an item from your inventory");
-            Console.WriteLine("'use' - to drink a potion / eat food or equip a weapon");
+            Console.WriteLine("'use <name of an item in the room / inventory>' - to drink a potion / eat food or equip a weapon");
             Console.WriteLine("'go <direction / first letter of direction>' - move to the direction (north, east, south or west)");
             Console.WriteLine("'speak <person>' - to start a conversation with the person");
             Console.WriteLine("'speak <creature / person>' - to start a fight with the creature or person");
@@ -159,7 +160,7 @@ namespace Abschlussaufgabe___TextAdventure
                             if(Inventory.Contains(subject.Key))
                             {
                                 Console.WriteLine("You successfully opened the " + subject.Name + ". Things you got from the " + subject.Name + ":");
-                                foreach(Item item in subject.Inventory)
+                                foreach(Item item in subject.Inventory.ToList())
                                 {
                                     Console.WriteLine(item.Name);
                                     Inventory.Add(item);
@@ -171,7 +172,7 @@ namespace Abschlussaufgabe___TextAdventure
                         else
                         {
                             Console.WriteLine("Things you got from the " + subject.Name + ":");
-                            foreach(Item item in subject.Inventory)
+                            foreach(Item item in subject.Inventory.ToList())
                             {
                                 Console.WriteLine(item.Name);
                                 Inventory.Add(item);
@@ -188,7 +189,7 @@ namespace Abschlussaufgabe___TextAdventure
                     if (subject.Health == 0)
                     {
                         Console.WriteLine("Things you got from " + subject.Name + "s corpse:");
-                        foreach(Item item in subject.Inventory)
+                        foreach(Item item in subject.Inventory.ToList())
                         {
                             Console.WriteLine(item.Name);
                             Inventory.Add(item);
@@ -255,7 +256,7 @@ namespace Abschlussaufgabe___TextAdventure
             {
                 Item item = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
                 if(!item.Carryable)
-                    Console.WriteLine("Did you really try to pick up a " + item.Name + " ?");
+                    Console.WriteLine("You can't pick up a " + item.Name + ".");
                 else
                 {
                     if (item == null)
@@ -312,6 +313,7 @@ namespace Abschlussaufgabe___TextAdventure
                         Health += potion.Cure;
                         if(Health >= MaxHealth)
                             Health = MaxHealth;
+                        Inventory.Remove(potion);
                         Console.WriteLine("You consumed " + potion.Name  + ". You now have " + Health + " healthpoints.");
                     } 
                     else

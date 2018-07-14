@@ -8,3 +8,4 @@ D:\GitHub\softwaredesign\Abschlussaufgabe - TextAdventure\bin\Debug\netcoreapp2.
 D:\GitHub\softwaredesign\Abschlussaufgabe - TextAdventure\bin\Debug\netcoreapp2.0\Abschlussaufgabe - TextAdventure.pdb
 D:\GitHub\softwaredesign\Abschlussaufgabe - TextAdventure\obj\Debug\netcoreapp2.0\Abschlussaufgabe - TextAdventure.dll
 D:\GitHub\softwaredesign\Abschlussaufgabe - TextAdventure\obj\Debug\netcoreapp2.0\Abschlussaufgabe - TextAdventure.pdb
+D:\GitHub\softwaredesign\Abschlussaufgabe - TextAdventure\obj\Debug\netcoreapp2.0\Abschlussaufgabe - TextAdventure.csprojResolveAssemblyReference.cache

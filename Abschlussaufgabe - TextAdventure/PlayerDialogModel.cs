@@ -6,7 +6,7 @@ namespace Abschlussaufgabe___TextAdventure
     class PlayerDialogModel
     {
         public Creature DialogPartner {get; private set;}
-        public List<PlayerDialogLine> DialogLines = new List<PlayerDialogLine>();
+        public List<PlayerDialogLine> DialogLines {get; set;} = new List<PlayerDialogLine>();
         public int DialogPhase {get; set;}
 
         public PlayerDialogModel (Creature dialogPartner)

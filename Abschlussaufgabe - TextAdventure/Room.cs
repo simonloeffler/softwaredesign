@@ -5,9 +5,9 @@ namespace Abschlussaufgabe___TextAdventure
 {
     class Room: GameObject
     {
-        public Dictionary<TextAdventure.Direction, Room> Neighbors = new Dictionary<TextAdventure.Direction, Room>();
-        public List<Item> Items = new List<Item>();
-        public List<NPC> NPCs = new List<NPC>();
+        public Dictionary<TextAdventure.Direction, Room> Neighbors {get; set;} = new Dictionary<TextAdventure.Direction, Room>();
+        public List<Item> Items {get; set;} = new List<Item>();
+        public List<NPC> NPCs {get; set;} = new List<NPC>();
         public Item Key {get; private set;}
         public bool AlreadyVisited {get; set;}
 

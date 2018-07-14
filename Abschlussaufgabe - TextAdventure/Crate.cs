@@ -6,7 +6,7 @@ namespace Abschlussaufgabe___TextAdventure
     class Crate: Item
     {
         public Item Key {get; private set;}
-        public List<Item> Inventory = new List<Item>();
+        public List<Item> Inventory {get; set;} = new List<Item>();
 
         public Crate (string name, string description, bool carryable, Item key): base (name,  description, carryable)
         {

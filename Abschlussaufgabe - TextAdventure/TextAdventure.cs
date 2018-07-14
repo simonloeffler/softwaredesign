@@ -18,6 +18,8 @@ namespace Abschlussaufgabe___TextAdventure
             LoadGameData();
             ConsoleWriteRed(Environment.NewLine + "Welcome to The Fantastic Adventure!" + Environment.NewLine);
             Console.WriteLine("You hit the ground really hard. When getting your head up and checking the situation you acknowledge that you are in a yard in front of a tavern.");
+            Console.WriteLine("The carriage behind you is driving away while the carrige driver screams: 'I alredy took the money for taking you with us out of your pockets!'");
+            Console.WriteLine("And just in this moment you realise that your throat is really dry and you'r very thirsty. You should find some booze quickly.");
 
             for (;;)
             {
@@ -100,12 +102,10 @@ namespace Abschlussaufgabe___TextAdventure
         public static void LoadGameData ()
         {
 
-            WinningItem = GetItemByName("Booze");
-
             #region Items
 
             Items.Add(new Item("Cryptkey", "It's a really old key shaped like a bone.", true));
-            Items.Add(new Item("Cratekey", "Just a ordinary key.", true));
+            Items.Add(new Item("Cratekey", "Just an ordinary key.", true));
 
             Items.Add(new Item("Stone", "And the winner is Rocky!", true));
             Items.Add(new Item("Ring", "It's the servants ring!", true));
@@ -128,6 +128,8 @@ namespace Abschlussaufgabe___TextAdventure
             Items.Add(new Potion("Booze", "Just perfect.", true, 100));
 
             Items.Add(new Crate("Crate", "A big, heavy crate. Seems like you need a key to open it.", false, GetItemByName("Cratekey")));
+
+            WinningItem = GetItemByName("Booze");
 
             #endregion
 
@@ -238,7 +240,7 @@ namespace Abschlussaufgabe___TextAdventure
             GetNPCByName("Skeleton").DialogLines.Add(new CreatureDialogLine("If you are dying anyway I could also have a little fun with you! Let's fight!", 2, null));
 
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Hello...", 0, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Well, actually you can, yes. I lost my engagement ring on the graveyard...pleas bring it back.", 1, null));
+            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Well, actually you can, yes. I lost my engagement ring on the graveyard...please bring it back.", 1, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("You think I'm a minor background actor? I have to tell you that I have the key to a crypt wich is important for your progress!", 2, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Only if you get me my ring I lost somewhere nearby!", 3, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("I don't exactly know...it has to be somwhere around.", 4, null));
