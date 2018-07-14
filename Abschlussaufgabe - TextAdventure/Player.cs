@@ -279,12 +279,13 @@ namespace Abschlussaufgabe___TextAdventure
             else
             {
                 Item item = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
-                if(!item.Carryable)
-                    Console.WriteLine("You can't pick up a " + item.Name + ".");
+            
+                if (item == null)
+                    Console.WriteLine("There is no item with the name '" + thing + "' in the room.");
                 else
                 {
-                    if (item == null)
-                        Console.WriteLine("There is no item with the name '" + thing + "' in the room.");
+                    if(!item.Carryable)
+                        Console.WriteLine("You can't pick up a " + item.Name + ".");
                     else
                     {
                         Inventory.Add(item);
