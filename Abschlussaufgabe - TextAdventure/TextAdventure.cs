@@ -19,7 +19,7 @@ namespace Abschlussaufgabe___TextAdventure
             ConsoleWriteRed(Environment.NewLine + "Welcome to The Fantastic Adventure!" + Environment.NewLine);
             Console.WriteLine("You hit the ground really hard. When getting your head up and checking the situation you acknowledge that you are in a yard in front of a tavern.");
             Console.WriteLine("The carriage behind you is driving away while the carrige driver screams: 'I alredy took the money for taking you with us out of your pockets!'");
-            Console.WriteLine("And just in this moment you realise that your throat is really dry and you'r very thirsty. You should find some booze quickly.");
+            Console.WriteLine("And just in this moment you realise that your throat is really dry and you're very thirsty. You should find some booze quickly.");
 
             for (;;)
             {
@@ -34,6 +34,8 @@ namespace Abschlussaufgabe___TextAdventure
                     ConsoleWriteRed("Thank you for playing.");
                     break;
                 }
+
+                Player.CheckWeapon();
 
                 ConsoleWriteDarkYellow("Type 'help' and press Enter if you don't know what to do." + Environment.NewLine);
 
@@ -79,7 +81,7 @@ namespace Abschlussaufgabe___TextAdventure
                     case "attack": case "a":
                         Player.Attack(parameter);
                         break;
-                    case "info": case "x":
+                    case "info": case "in":
                         Player.PlayerInfo();
                         break;
                     case "use": case "u":
@@ -282,23 +284,23 @@ namespace Abschlussaufgabe___TextAdventure
         #region Helper
 
         public static Room GetRoomByName(string name){
-            return Rooms.Find(x => x.Name == name);
+            return Rooms.Find(x => x.Name.ToLower() == name);
         }
 
         public static Item GetItemByName(string name){
-            return Items.Find(x => x.Name == name);
+            return Items.Find(x => x.Name.ToLower() == name);
         }
 
         public static Crate GetCrateByName(string name){
-            return (Crate) Items.Find(x => x.Name == name);
+            return (Crate) Items.Find(x => x.Name.ToLower() == name);
         }
 
         public static NPC GetNPCByName(string name){
-            return NPCs.Find(x => x.Name == name);
+            return NPCs.Find(x => x.Name.ToLower() == name);
         }
 
         public static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name){
-            return Player.Dialogs.Find(x => x.DialogPartner.Name == name);
+            return Player.Dialogs.Find(x => x.DialogPartner.Name.ToLower() == name);
         }
 
         #endregion

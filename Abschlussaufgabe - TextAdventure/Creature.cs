@@ -23,7 +23,7 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine(Environment.NewLine + "You have two Options:");
                 Console.WriteLine("Type '1' and press Enter for a normal attack.");
                 Console.WriteLine("Type '2' and press Enter for a special attack (causes more damage but is also more likely to miss).");
-                Console.WriteLine("(You can also type 'exit' and press Enter while fighting to leave the game - but that's no real option.)");
+                Console.WriteLine("(You can also type 'quit' / 'q' and press Enter while fighting to leave the game - but that's no real option.)");
 
                 string input = Console.ReadLine();
                 Random rnd = new Random();

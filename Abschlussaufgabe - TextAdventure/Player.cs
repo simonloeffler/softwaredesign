@@ -27,18 +27,18 @@ namespace Abschlussaufgabe___TextAdventure
         public void Help ()
         {
             Console.WriteLine("You can use the following commands to play the game:");
-            Console.WriteLine("'inventory' - to check your pockets");
-            Console.WriteLine("'look' - to look around in the room you're in");
-            Console.WriteLine("'lookat <name of something in the room / inventory>' - to look at the object or person ");
-            Console.WriteLine("'loot' - to loot a crate or a corpse");
-            Console.WriteLine("'take <name of an item in the room>' - to pick an item up");
-            Console.WriteLine("'drop <name of an item in your inventory' - to drop an item from your inventory");
-            Console.WriteLine("'use <name of an item in the room / inventory>' - to drink a potion / eat food or equip a weapon");
-            Console.WriteLine("'go <direction / first letter of direction>' - move to the direction (north, east, south or west)");
-            Console.WriteLine("'speak <person>' - to start a conversation with the person");
-            Console.WriteLine("'speak <creature / person>' - to start a fight with the creature or person");
-            Console.WriteLine("'info' - show info about the Player");
-            Console.WriteLine("'quit' - to quit the game");
+            Console.WriteLine("'inventory' (i) - to check your pockets");
+            Console.WriteLine("'look' (l) - to look around in the room you're in");
+            Console.WriteLine("'lookat <name of something in the room / inventory>' (la) - to look at the object or person ");
+            Console.WriteLine("'loot <name of an item / corpse in the room>' (lo) - to loot a crate or a corpse");
+            Console.WriteLine("'take <name of an item in the room>' (t) - to pick an item up");
+            Console.WriteLine("'drop <name of an item in your inventory' (d) - to drop an item from your inventory");
+            Console.WriteLine("'use <name of an item in the inventory>' (u) - to drink a potion / eat food or equip a weapon");
+            Console.WriteLine("'go <direction / first letter of direction>' (g) - move to the direction (north, east, south or west)");
+            Console.WriteLine("'speak <person in the room>' (s) - to start a conversation with the person");
+            Console.WriteLine("'attack <creature / person>' (a) - to start a fight with the creature or person");
+            Console.WriteLine("'info' (in) - show info about the Player");
+            Console.WriteLine("'quit' (q) - to quit the game");
         }
 
         public void PlayerInfo ()
@@ -319,6 +319,15 @@ namespace Abschlussaufgabe___TextAdventure
                     else
                         Console.WriteLine("You can't use this.");
                 }
+            }
+        }
+
+        public void CheckWeapon() 
+        {
+            if(Inventory.Find(x => x.Name == EquippedWeapon.Name) == null)
+            {
+                Damage = BaseDamage;
+                EquippedWeapon = null;
             }
         }
 
