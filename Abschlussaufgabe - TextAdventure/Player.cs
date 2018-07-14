@@ -48,8 +48,8 @@ namespace Abschlussaufgabe___TextAdventure
         {
             Console.WriteLine("You can use the following commands to play the game:");
             Console.WriteLine("'inventory' (i) - to check your pockets");
-            Console.WriteLine("'look' (l) - to look around in the room you're in");
-            Console.WriteLine("'lookat <name of something in the room / inventory>' (la) - to look at the object or person ");
+            Console.WriteLine("'look' (l) - to look around in the room / place you're in");
+            Console.WriteLine("'lookat <name of something in the room / inventory>' (la) - to look at the object or person and get further information");
             Console.WriteLine("'loot <name of an item / corpse in the room>' (lo) - to loot a crate or a corpse");
             Console.WriteLine("'take <name of an item in the room>' (t) - to pick an item up");
             Console.WriteLine("'drop <name of an item in your inventory' (d) - to drop an item from your inventory");
@@ -94,11 +94,15 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine("   You can reach the " + neighbor.Value.Name + " in the " + neighbor.Key + ".");
             }
             Console.WriteLine(Environment.NewLine + "The persons in the location are:");
+            if (!CurrentRoom.NPCs.Any())
+                Console.WriteLine("   none");
             foreach (NPC npc in CurrentRoom.NPCs)
             {
                 Console.WriteLine("   " + npc.Name);
             }
             Console.WriteLine(Environment.NewLine + "Also you can see the following things nearby:");
+            if (!CurrentRoom.Items.Any())
+                Console.WriteLine("   none");
             foreach (Item item in CurrentRoom.Items)
                 Console.WriteLine("   " + item.Name);
         }
@@ -286,12 +290,12 @@ namespace Abschlussaufgabe___TextAdventure
                 else
                 {
                     if(!item.Carryable)
-                        Console.WriteLine("You can't pick up a " + item.Name + ".");
+                        Console.WriteLine("You can't pick this up: " + item.Name);
                     else
                     {
                         Inventory.Add(item);
                         CurrentRoom.Items.Remove(item);
-                        Console.WriteLine("You added a " + item.Name + " to your inventory.");
+                        Console.WriteLine("You added to your inventory: " + item.Name);
                     }
                 }
             }

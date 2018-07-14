@@ -112,9 +112,9 @@ namespace Abschlussaufgabe___TextAdventure
             Items.Add(new Item("Stone", "And the winner is Rocky!", true));
             Items.Add(new Item("Ring", "It's the servants ring!", true));
             Items.Add(new Item("Well", "Well, well, well. What do we have here?", false));
-            Items.Add(new Item("Gravestone", "R.I.P Smitty Werbenjagermanjensen - he was the real #1", false));
-            Items.Add(new Item("Cross", "Grave of an unknwon hero - fallen while hunting wild hogs.", false));
-            Items.Add(new Item("Grave", "'Arouse me from sleep on the 30th September.'", false));
+            Items.Add(new Item("Gravestone", "On the Gravestone it says: 'R.I.P Smitty Werbenjagermanjensen - he was the real #1'", false));
+            Items.Add(new Item("Cross", "On the Cross it says: 'Grave of an unknwon hero - fallen while hunting wild hogs.'", false));
+            Items.Add(new Item("Grave", "On the Grave it says: 'Arouse me from sleep on the 30th September.'", false));
             Items.Add(new Item("Mirror", "A bored looking face in front of a computer.", false));
             Items.Add(new Item("Barrel", "Not a single drop inside...", false));
 
