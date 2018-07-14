@@ -17,7 +17,7 @@ namespace Abschlussaufgabe___TextAdventure
 
             for(;;)
             {
-                if(endFightEarly == true)
+                if(endFightEarly)
                     break;
 
                 Console.WriteLine(Environment.NewLine + "You have two Options:");
@@ -54,7 +54,7 @@ namespace Abschlussaufgabe___TextAdventure
 
                 int enemyAttack = rnd.Next(1, 3);
                 
-                if(endFightEarly == false)
+                if(!endFightEarly)
                     switch (enemyAttack)
                     {
                         case 1:

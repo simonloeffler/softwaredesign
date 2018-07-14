@@ -208,24 +208,29 @@ namespace Abschlussaufgabe___TextAdventure
         {
             Room nextRoom = null;
             bool validDirection = false;
+            TextAdventure.Direction selectedDirection = TextAdventure.Direction.north;
 
             switch (direction)
             {
                 case "north": case "n":
                     CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.north, out nextRoom);
                     validDirection = true;
+                    selectedDirection = TextAdventure.Direction.north;
                     break;
                 case "south": case "s":
                     CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.south, out nextRoom);
                     validDirection = true;
+                    selectedDirection = TextAdventure.Direction.south;
                     break;
                 case "east": case "e":
                     CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.east, out nextRoom);
                     validDirection = true;
+                    selectedDirection = TextAdventure.Direction.east;
                     break;
                 case "west": case "w":
                     CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.west, out nextRoom);
                     validDirection = true;
+                    selectedDirection = TextAdventure.Direction.west;
                     break;
                 default:
                     Console.WriteLine("'" + direction + "'" + " is not a valid direction to go.");
@@ -233,9 +238,9 @@ namespace Abschlussaufgabe___TextAdventure
             }
 
             if (validDirection && nextRoom == null)
-                Console.WriteLine("There is no place to go in the " + direction + ".");
+                Console.WriteLine("There is no place to go in the " + selectedDirection.ToString() + ".");
             else if (nextRoom != null)
-           {
+            {
                 if(nextRoom.Key != null && Inventory.Contains(nextRoom.Key) || nextRoom.Key == null)
                 {
                     CurrentRoom = nextRoom;
@@ -245,7 +250,7 @@ namespace Abschlussaufgabe___TextAdventure
                 }
                 else
                     Console.WriteLine("You can't go there - you are missing the right key!");
-           }   
+            }   
         }
 
         public void Take (string thing)
@@ -324,11 +329,12 @@ namespace Abschlussaufgabe___TextAdventure
 
         public void CheckWeapon() 
         {
-            if(Inventory.Find(x => x.Name == EquippedWeapon.Name) == null)
-            {
-                Damage = BaseDamage;
-                EquippedWeapon = null;
-            }
+            if(EquippedWeapon != null)
+                if(Inventory.Find(x => x.Name == EquippedWeapon.Name) == null)
+                {
+                    Damage = BaseDamage;
+                    EquippedWeapon = null;
+                }
         }
 
         #endregion
