@@ -284,23 +284,28 @@ namespace Abschlussaufgabe___TextAdventure
 
         #region Helper
 
-        public static Room GetRoomByName(string name){
+        public static Room GetRoomByName(string name)
+        {
             return Rooms.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static Item GetItemByName(string name){
+        public static Item GetItemByName(string name)
+        {
             return Items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static Crate GetCrateByName(string name){
+        public static Crate GetCrateByName(string name)
+        {
             return (Crate) Items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static NPC GetNPCByName(string name){
+        public static NPC GetNPCByName(string name)
+        {
             return NPCs.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name){
+        public static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name)
+        {
             return Player.Dialogs.Find(x => x.DialogPartner.Name.ToLower() == name.ToLower());
         }
 

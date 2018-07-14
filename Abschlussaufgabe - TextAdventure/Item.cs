@@ -6,7 +6,8 @@ namespace Abschlussaufgabe___TextAdventure
     {
         public bool Carryable {get; protected set;}
 
-        public Item (string name, string description, bool carryable){
+        public Item (string name, string description, bool carryable)
+        {
             Name = name;
             Description = description;  
             Carryable = carryable;         

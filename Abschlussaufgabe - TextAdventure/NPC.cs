@@ -12,7 +12,8 @@ namespace Abschlussaufgabe___TextAdventure
         public int MaxDialogPhase {get; private set;}
         public bool CanSpeak {get; private set;}
 
-        public NPC (string name, string description, int health, int damage, bool isActive, bool isAggressive, bool canSpeak){
+        public NPC (string name, string description, int health, int damage, bool isActive, bool isAggressive, bool canSpeak)
+        {
             Name = name;
             Description = description;
             Health = health;

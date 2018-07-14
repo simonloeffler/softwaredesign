@@ -14,7 +14,8 @@ namespace Abschlussaufgabe___TextAdventure
         public Weapon EquippedWeapon {get; private set;}
         public int MaxHealth {get; private set;}
 
-        private Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom){
+        private Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom)
+        {
             Name = name;
             Description = description;
             MaxHealth = maxHealth;

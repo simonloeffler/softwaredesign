@@ -11,14 +11,16 @@ namespace Abschlussaufgabe___TextAdventure
         public Item Key {get; private set;}
         public bool AlreadyVisited {get; set;}
 
-        public Room (string name, string description, Item key){
+        public Room (string name, string description, Item key)
+        {
             Name = name;
             Description = description;       
             Key = key;    
             AlreadyVisited = false;
         }
 
-        public void StartUp(){
+        public void StartUp()
+        {
             this.AlreadyVisited = true;
             foreach (NPC npc in NPCs)
             {
