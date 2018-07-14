@@ -269,6 +269,7 @@ namespace Abschlussaufgabe___TextAdventure
                 {
                     CurrentRoom = nextRoom;
                     Console.WriteLine("You are now in the " + CurrentRoom.Name + ".");
+                    Look();
                     if(!CurrentRoom.AlreadyVisited)
                         CurrentRoom.StartUp();
                 }
