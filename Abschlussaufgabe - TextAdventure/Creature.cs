@@ -123,7 +123,7 @@ namespace Abschlussaufgabe___TextAdventure
                 CreatureDialogLine npcLine = dialogPartner.DialogLines.Find(x => x.DialogPhase == playerDialog.DialogPhase);
                 TextAdventure.ConsoleWriteBlue(Environment.NewLine + dialogPartner.Name + ": " + npcLine.Line);
 
-                if (npcLine.Gift != null)
+                if (npcLine.Gift != null && dialogPartner.Inventory.Contains(npcLine.Gift))
                 {
                     player.Inventory.Add(npcLine.Gift);
                     dialogPartner.Inventory.Remove(npcLine.Gift);
