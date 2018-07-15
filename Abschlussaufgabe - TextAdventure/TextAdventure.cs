@@ -20,6 +20,7 @@ namespace Abschlussaufgabe___TextAdventure
             Console.WriteLine("You hit the ground really hard. When getting your head up and checking the situation you acknowledge that you are in a yard in front of a tavern.");
             Console.WriteLine("The carriage behind you is driving away while the carrige driver screams: 'I alredy took the money for taking you with us out of your pockets!'");
             Console.WriteLine("And just in this moment you realise that your throat is really dry and you're very thirsty. You should find some booze quickly.");
+            Player.Look();
 
             for (;;)
             {
