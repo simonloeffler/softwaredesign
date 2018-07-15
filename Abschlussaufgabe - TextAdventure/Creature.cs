@@ -25,7 +25,7 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine("Type '2' and press Enter for a special attack (causes more damage but is also more likely to miss).");
                 Console.WriteLine("(You can also type 'quit' / 'q' and press Enter while fighting to leave the game - but that's no real option.)");
 
-                string input = Console.ReadLine();
+                string input = Console.ReadLine().ToLower();
                 Random rnd = new Random();
 
                 switch (input)
@@ -154,7 +154,6 @@ namespace Abschlussaufgabe___TextAdventure
                     else
                     {
                         if (playerDialogLine.Gift != null)
-                        {
                             if(player.Inventory.Contains(playerDialogLine.Gift))
                             {
                                 dialogPartner.Inventory.Add(playerDialogLine.Gift);
@@ -164,7 +163,6 @@ namespace Abschlussaufgabe___TextAdventure
                             } 
                             else
                                 TextAdventure.ConsoleWriteDarkYellow("You don't have " + playerDialogLine.Gift.Name + " in your inventory.");
-                        }
                         else
                         {
                             TextAdventure.ConsoleWriteBlue("Player: " + playerDialogLine.Line);

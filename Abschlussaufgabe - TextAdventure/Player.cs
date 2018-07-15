@@ -114,7 +114,7 @@ namespace Abschlussaufgabe___TextAdventure
             else
             {
                 GameObject subject = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
-                if (subject == null)
+                if(subject == null)
                     subject = CurrentRoom.NPCs.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
                     subject = Inventory.Find(x => x.Name.ToLower() == thing);
@@ -133,47 +133,52 @@ namespace Abschlussaufgabe___TextAdventure
                         Potion potion = (Potion) subject;
                         Console.WriteLine(potion.Name  + " can be consumed and is capable of curing " + potion.Cure + " healthpoints.");
                     } 
-                }
-                
+                } 
             } 
         }
 
         public void Attack (string person)
         {
-           if (String.IsNullOrWhiteSpace(person))
+            if (String.IsNullOrWhiteSpace(person))
                 Console.WriteLine ("Please select a Person or Creature to attack.");
             else
-                if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person) != null)
-                    if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person).Health == 0)
-                        Console.WriteLine("You can't attack corpses. But you can loot them.");
+            {
+                NPC victim = CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person);
+                if(victim == null)
+                    if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
+                        Console.WriteLine ("You can't fight this...");
                     else
-                        Fight(TextAdventure.Player, CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person));
-                else if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
-                    Console.WriteLine ("You can't fight this...");
+                        Console.WriteLine ("There is no " + person + " nearby.");
+                else if(victim.Health == 0)
+                    Console.WriteLine("You can't attack corpses. But you can loot them.");
                 else
-                    Console.WriteLine ("There is no " + person + " nearby.");
+                    Fight(TextAdventure.Player, victim);
+            }         
         }
 
         public void SpeakTo (string person)
         {
            if (String.IsNullOrWhiteSpace(person))
-                Console.WriteLine ("Please select a Person to speak to.");
+                Console.WriteLine ("Please select a Person or Creature to attack.");
             else
-                if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person) != null)
-                    if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person).Health == 0)
-                        Console.WriteLine("You can't speak to corpses. But you can loot them.");
+            {
+                NPC dialogPartner = CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person);
+                if(dialogPartner == null)
+                    if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
+                        Console.WriteLine ("You can't speak with this...");
                     else
-                        Dialog(TextAdventure.Player, CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person));
-                else if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
-                    Console.WriteLine ("You can't talk to this...");
+                        Console.WriteLine ("There is no " + person + " nearby.");
+                else if(dialogPartner.Health == 0)
+                    Console.WriteLine("You can't speak with corpses. But you can loot them.");
                 else
-                    Console.WriteLine ("There is no " + person + " nearby.");
+                    Dialog(TextAdventure.Player, dialogPartner);
+            }         
         }
 
         public void Loot (string thing)
         {
             if (String.IsNullOrWhiteSpace(thing))
-                Console.WriteLine ("Please select a Object to loot.");
+                Console.WriteLine ("Please select a object or corpse to loot.");
             else 
             {
                 if(CurrentRoom.Items.Find(x => x.Name.ToLower() == thing) != null)
@@ -196,6 +201,8 @@ namespace Abschlussaufgabe___TextAdventure
                         else
                         {
                             Console.WriteLine("Things you got from the " + subject.Name + ":");
+                            if (!subject.Inventory.Any())
+                                Console.WriteLine("   none");
                             foreach(Item item in subject.Inventory.ToList())
                             {
                                 Console.WriteLine(item.Name);
@@ -213,6 +220,8 @@ namespace Abschlussaufgabe___TextAdventure
                     if (subject.Health == 0)
                     {
                         Console.WriteLine("Things you got from " + subject.Name + "s corpse:");
+                        if (!subject.Inventory.Any())
+                                Console.WriteLine("   none");
                         foreach(Item item in subject.Inventory.ToList())
                         {
                             Console.WriteLine(item.Name);
@@ -264,7 +273,6 @@ namespace Abschlussaufgabe___TextAdventure
             if (validDirection && nextRoom == null)
                 Console.WriteLine("There is no place to go in the " + selectedDirection.ToString() + ".");
             else if (nextRoom != null)
-            {
                 if(nextRoom.Key != null && Inventory.Contains(nextRoom.Key) || nextRoom.Key == null)
                 {
                     CurrentRoom = nextRoom;
@@ -274,8 +282,7 @@ namespace Abschlussaufgabe___TextAdventure
                         CurrentRoom.StartUp();
                 }
                 else
-                    Console.WriteLine("You can't go there - you are missing the right key!");
-            }   
+                    Console.WriteLine("You can't go there - you are missing the right key!");  
         }
 
         public void Take (string thing)
@@ -289,7 +296,6 @@ namespace Abschlussaufgabe___TextAdventure
                 if (item == null)
                     Console.WriteLine("There is no item with the name '" + thing + "' in the room.");
                 else
-                {
                     if(!item.Carryable)
                         Console.WriteLine("You can't pick this up: " + item.Name);
                     else
@@ -298,7 +304,6 @@ namespace Abschlussaufgabe___TextAdventure
                         CurrentRoom.Items.Remove(item);
                         Console.WriteLine("You added to your inventory: " + item.Name);
                     }
-                }
             }
         }
 
@@ -330,7 +335,6 @@ namespace Abschlussaufgabe___TextAdventure
                 if (item == null)
                     Console.WriteLine("There is no item with the name '" + thing + "' in your inventory.");
                 else
-                {
                     if(item is Weapon)
                     {
                         Weapon newWeapon = (Weapon) item;
@@ -349,7 +353,6 @@ namespace Abschlussaufgabe___TextAdventure
                     } 
                     else
                         Console.WriteLine("You can't use this.");
-                }
             }
         }
 
@@ -363,9 +366,6 @@ namespace Abschlussaufgabe___TextAdventure
                 }
         }
 
-        #endregion
-
-        #region Helper
         #endregion
     }
 }
