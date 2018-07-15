@@ -94,9 +94,9 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine("   You can reach the " + neighbor.Value.Name + " in the " + neighbor.Key + ".");
             }
             Console.WriteLine(Environment.NewLine + "The persons in the location are:");
-            if (!CurrentRoom.NPCs.Any())
+            if (!CurrentRoom.Npcs.Any())
                 Console.WriteLine("   none");
-            foreach (NPC npc in CurrentRoom.NPCs)
+            foreach (Npc npc in CurrentRoom.Npcs)
             {
                 Console.WriteLine("   " + npc.Name);
             }
@@ -115,7 +115,7 @@ namespace Abschlussaufgabe___TextAdventure
             {
                 GameObject subject = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
-                    subject = CurrentRoom.NPCs.Find(x => x.Name.ToLower() == thing);
+                    subject = CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
                     subject = Inventory.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
@@ -143,7 +143,7 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Person or Creature to attack.");
             else
             {
-                NPC victim = CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person);
+                Npc victim = CurrentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
                 if(victim == null)
                     if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
                         Console.WriteLine ("You can't fight this...");
@@ -162,7 +162,7 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Person or Creature to attack.");
             else
             {
-                NPC dialogPartner = CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person);
+                Npc dialogPartner = CurrentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
                 if(dialogPartner == null)
                     if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
                         Console.WriteLine ("You can't speak with this...");
@@ -214,9 +214,9 @@ namespace Abschlussaufgabe___TextAdventure
                     else
                         Console.WriteLine("It's not possible to loot that.");
                     
-                else if (CurrentRoom.NPCs.Find(x => x.Name.ToLower() == thing) != null)
+                else if (CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing) != null)
                 {
-                    NPC subject = CurrentRoom.NPCs.Find(x => x.Name.ToLower() == thing);
+                    Npc subject = CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
                     if (subject.Health == 0)
                     {
                         Console.WriteLine("Things you got from " + subject.Name + "s corpse:");

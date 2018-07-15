@@ -9,7 +9,7 @@ namespace Abschlussaufgabe___TextAdventure
         protected int Damage {get; set;}
         public List<Item> Inventory {get; set;} = new List<Item>();
 
-        public void Fight(Player player, NPC enemy)
+        public void Fight(Player player, Npc enemy)
         {
             bool endFightEarly = false;
 
@@ -106,7 +106,7 @@ namespace Abschlussaufgabe___TextAdventure
             }
         }
 
-        public void Dialog(Player player, NPC dialogPartner)
+        public void Dialog(Player player, Npc dialogPartner)
         {
             if(!dialogPartner.CanSpeak)
             {

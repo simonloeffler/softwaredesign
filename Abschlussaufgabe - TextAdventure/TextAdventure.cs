@@ -10,7 +10,7 @@ namespace Abschlussaufgabe___TextAdventure
         private static Item WinningItem {get; set;}
         private static List<Room> Rooms {get; set;} = new List<Room>();
         private static List<Item> Items {get; set;} = new List<Item>();
-        private static List<NPC> NPCs {get; set;} = new List<NPC>();
+        private static List<Npc> Npcs {get; set;} = new List<Npc>();
         public static bool IsFinished {get; set;} = false;
         
         static void Main(string[] args)
@@ -204,12 +204,12 @@ namespace Abschlussaufgabe___TextAdventure
 
             #endregion
 
-            #region NPCs
+            #region Npcs
 
-            NPCs.Add(new NPC("Servant", "He looks bored and somehow a bit worried.", 100, 15, false, false, true));
-            NPCs.Add(new NPC("Orlan", "Standing behind the bar it seems like he is the owner of the tavern.", 100, 20, true, false, true));
-            NPCs.Add(new NPC("Rat", "A nasty, big rat.", 60, 5, false, true, false));
-            NPCs.Add(new NPC("Skeleton", "Maybe he should've drunken some more milk.", 90, 8, true, true, true));
+            Npcs.Add(new Npc("Servant", "He looks bored and somehow a bit worried.", 100, 15, false, false, true));
+            Npcs.Add(new Npc("Orlan", "Standing behind the bar it seems like he is the owner of the tavern.", 100, 20, true, false, true));
+            Npcs.Add(new Npc("Rat", "A nasty, big rat.", 60, 5, false, true, false));
+            Npcs.Add(new Npc("Skeleton", "Maybe he should've drunken some more milk.", 90, 8, true, true, true));
 
             #endregion
 
@@ -219,45 +219,45 @@ namespace Abschlussaufgabe___TextAdventure
             
             GetCrateByName("Crate").Inventory.Add(GetItemByName("Booze"));
 
-            GetNPCByName("Servant").Inventory.Add(GetItemByName("Cryptkey"));
-            GetNPCByName("Skeleton").Inventory.Add(GetItemByName("Sword"));
+            GetNpcByName("Servant").Inventory.Add(GetItemByName("Cryptkey"));
+            GetNpcByName("Skeleton").Inventory.Add(GetItemByName("Sword"));
 
             #endregion
 
-            #region AddNPCsToRooms
+            #region AddNpcsToRooms
 
-            GetRoomByName("Stables").NPCs.Add(GetNPCByName("Servant"));
-            GetRoomByName("Tavern").NPCs.Add(GetNPCByName("Orlan"));
-            GetRoomByName("Cellar").NPCs.Add(GetNPCByName("Rat"));
-            GetRoomByName("Crypt").NPCs.Add(GetNPCByName("Skeleton"));
+            GetRoomByName("Stables").Npcs.Add(GetNpcByName("Servant"));
+            GetRoomByName("Tavern").Npcs.Add(GetNpcByName("Orlan"));
+            GetRoomByName("Cellar").Npcs.Add(GetNpcByName("Rat"));
+            GetRoomByName("Crypt").Npcs.Add(GetNpcByName("Skeleton"));
 
             #endregion
 
-            #region NPCDialogLines
+            #region NpcDialogLines
 
-            GetNPCByName("Orlan").DialogLines.Add(new CreatureDialogLine("Hello my friend!", 0, null));
-            GetNPCByName("Orlan").DialogLines.Add(new CreatureDialogLine("Get out here you needy vagrant!", 1, null));
-            GetNPCByName("Orlan").DialogLines.Add(new CreatureDialogLine("Do you have money to pay for it?", 2, null));
+            GetNpcByName("Orlan").DialogLines.Add(new CreatureDialogLine("Hello my friend!", 0, null));
+            GetNpcByName("Orlan").DialogLines.Add(new CreatureDialogLine("Get out here you needy vagrant!", 1, null));
+            GetNpcByName("Orlan").DialogLines.Add(new CreatureDialogLine("Do you have money to pay for it?", 2, null));
 
-            GetNPCByName("Skeleton").DialogLines.Add(new CreatureDialogLine("Who dares to disturb my rest?", 0, null));
-            GetNPCByName("Skeleton").DialogLines.Add(new CreatureDialogLine("You won't hoax me you fool! I will now kill you!", 1, null));
-            GetNPCByName("Skeleton").DialogLines.Add(new CreatureDialogLine("If you are dying anyway I could also have a little fun with you! Let's fight!", 2, null));
+            GetNpcByName("Skeleton").DialogLines.Add(new CreatureDialogLine("Who dares to disturb my rest?", 0, null));
+            GetNpcByName("Skeleton").DialogLines.Add(new CreatureDialogLine("You won't hoax me you fool! I will now kill you!", 1, null));
+            GetNpcByName("Skeleton").DialogLines.Add(new CreatureDialogLine("If you are dying anyway I could also have a little fun with you! Let's fight!", 2, null));
 
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Hello...", 0, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Well, actually you can, yes. I lost my engagement ring on the graveyard...please bring it back.", 1, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("You think I'm a minor background actor? I have to tell you that I have the key to a crypt which is important for your progress!", 2, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Only if you get me my ring I lost somewhere nearby!", 3, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("I don't exactly know...it has to be somwhere around.", 4, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Thank you very much. Here, take this key as a reward. (He hands you over a key)", 5, GetItemByName("Cryptkey")));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Ok. Here, take the key. (He hands you over a key)", 6, GetItemByName("Cryptkey")));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("Hello...", 0, null));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("Well, actually you can, yes. I lost my engagement ring on the graveyard...please bring it back.", 1, null));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("You think I'm a minor background actor? I have to tell you that I have the key to a crypt which is important for your progress!", 2, null));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("Only if you get me my ring I lost somewhere nearby!", 3, null));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("I don't exactly know...it has to be somwhere around.", 4, null));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("Thank you very much. Here, take this key as a reward. (He hands you over a key)", 5, GetItemByName("Cryptkey")));
+            GetNpcByName("Servant").DialogLines.Add(new CreatureDialogLine("Ok. Here, take the key. (He hands you over a key)", 6, GetItemByName("Cryptkey")));
 
             #endregion
 
             #region PlayerDialogModels
 
-            Player.Dialogs.Add(new PlayerDialogModel(GetNPCByName("Orlan")));
-            Player.Dialogs.Add(new PlayerDialogModel(GetNPCByName("Servant")));
-            Player.Dialogs.Add(new PlayerDialogModel(GetNPCByName("Skeleton")));
+            Player.Dialogs.Add(new PlayerDialogModel(GetNpcByName("Orlan")));
+            Player.Dialogs.Add(new PlayerDialogModel(GetNpcByName("Servant")));
+            Player.Dialogs.Add(new PlayerDialogModel(GetNpcByName("Skeleton")));
 
             #endregion
 
@@ -300,9 +300,9 @@ namespace Abschlussaufgabe___TextAdventure
             return (Crate) Items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        private static NPC GetNPCByName(string name)
+        private static Npc GetNpcByName(string name)
         {
-            return NPCs.Find(x => x.Name.ToLower() == name.ToLower());
+            return Npcs.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
         private static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name)
