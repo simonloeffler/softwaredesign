@@ -13,7 +13,7 @@ namespace Abschlussaufgabe___TextAdventure
         {
             bool endFightEarly = false;
 
-            Console.WriteLine("A fight versus " + enemy.Name + " just started.");
+            TextAdventure.ConsoleWriteRed(Environment.NewLine + "A fight versus " + enemy.Name + " just started.");
 
             for(;;)
             {

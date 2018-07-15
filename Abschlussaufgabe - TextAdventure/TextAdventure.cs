@@ -245,7 +245,7 @@ namespace Abschlussaufgabe___TextAdventure
 
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Hello...", 0, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Well, actually you can, yes. I lost my engagement ring on the graveyard...please bring it back.", 1, null));
-            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("You think I'm a minor background actor? I have to tell you that I have the key to a crypt wich is important for your progress!", 2, null));
+            GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("You think I'm a minor background actor? I have to tell you that I have the key to a crypt which is important for your progress!", 2, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Only if you get me my ring I lost somewhere nearby!", 3, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("I don't exactly know...it has to be somwhere around.", 4, null));
             GetNPCByName("Servant").DialogLines.Add(new CreatureDialogLine("Thank you very much. Here, take this key as a reward. (He hands you over a key)", 5, GetItemByName("Cryptkey")));
@@ -274,7 +274,7 @@ namespace Abschlussaufgabe___TextAdventure
             GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("Oh look, it's one of these totally useless background characters again...", 0, null, 2, 2));
             GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("Here, your ring - take it back! (Give Ring to Servant)", 1, GetItemByName("Ring"), 1, 5));
             GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("Then give me the damn key you moron!", 2, null, 1, 3));
-            GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("Where exactly did you lost it?", 3, null, 1, 4));
+            GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("Where exactly did you lose it?", 3, null, 1, 4));
             GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("I got your damn key - take it! (Give Ring to Servant)", 3, GetItemByName("Ring"), 2, 6));
             GetPlayerDialogModelByDialogPartnerName("Servant").DialogLines.Add(new PlayerDialogLine("I got your damn key - take it! I found it on the Graveyard. (Give Ring to Servant)", 4, GetItemByName("Ring"), 1, 6));
 
