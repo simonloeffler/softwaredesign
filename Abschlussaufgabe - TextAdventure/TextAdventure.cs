@@ -7,10 +7,10 @@ namespace Abschlussaufgabe___TextAdventure
     static class TextAdventure
     {
         public static Player Player {get; private set;}
-        public static Item WinningItem {get; private set;}
-        public static List<Room> Rooms {get; private set;} = new List<Room>();
-        public static List<Item> Items {get; private set;} = new List<Item>();
-        public static List<NPC> NPCs {get; private set;} = new List<NPC>();
+        private static Item WinningItem {get; set;}
+        private static List<Room> Rooms {get; set;} = new List<Room>();
+        private static List<Item> Items {get; set;} = new List<Item>();
+        private static List<NPC> NPCs {get; set;} = new List<NPC>();
         public static bool IsFinished {get; set;} = false;
         
         static void Main(string[] args)
@@ -101,7 +101,7 @@ namespace Abschlussaufgabe___TextAdventure
 
         #region GameData
 
-        public static void LoadGameData ()
+        private static void LoadGameData ()
         {
 
             #region Items
@@ -139,7 +139,7 @@ namespace Abschlussaufgabe___TextAdventure
 
             Rooms.Add(new Room("Yard", "It's a big yard with a hard ground.", null));
             Rooms.Add(new Room("Tavern", "A cozy tavern. Unfortunately you have no money.", null));
-            Rooms.Add(new Room("Stables", "Small Stables with no horses at all.", null));
+            Rooms.Add(new Room("Stables", "Small stables with no horses at all.", null));
             Rooms.Add(new Room("Graveyard", "A spooky graveyard with some old gravestones.", null));
             Rooms.Add(new Room("Crypt", "It's really dark in here. You can barely see a thing.", GetItemByName("Cryptkey")));
             Rooms.Add(new Room("Cellar", "A cold stone cellar with all kinds of stuff. Maybe you can find something to ease your thirst.", null));
@@ -284,27 +284,27 @@ namespace Abschlussaufgabe___TextAdventure
 
         #region Helper
 
-        public static Room GetRoomByName(string name)
+        private static Room GetRoomByName(string name)
         {
             return Rooms.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static Item GetItemByName(string name)
+        private static Item GetItemByName(string name)
         {
             return Items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static Crate GetCrateByName(string name)
+        private static Crate GetCrateByName(string name)
         {
             return (Crate) Items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static NPC GetNPCByName(string name)
+        private static NPC GetNPCByName(string name)
         {
             return NPCs.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        public static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name)
+        private static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name)
         {
             return Player.Dialogs.Find(x => x.DialogPartner.Name.ToLower() == name.ToLower());
         }

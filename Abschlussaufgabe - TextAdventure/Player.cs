@@ -9,10 +9,10 @@ namespace Abschlussaufgabe___TextAdventure
         private static Player _instance;
 
         public List<PlayerDialogModel> Dialogs {get; set;} = new List<PlayerDialogModel>();
-        public Room CurrentRoom {get; private set;}
-        public int BaseDamage {get; private set;}
-        public Weapon EquippedWeapon {get; private set;}
-        public int MaxHealth {get; private set;}
+        private Room CurrentRoom {get; set;}
+        private int BaseDamage {get; set;}
+        private Weapon EquippedWeapon {get; set;}
+        private int MaxHealth {get; set;}
 
         private Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom)
         {
@@ -141,7 +141,7 @@ namespace Abschlussaufgabe___TextAdventure
         public void Attack (string person)
         {
            if (String.IsNullOrWhiteSpace(person))
-                Console.WriteLine ("Please select a Object to look at.");
+                Console.WriteLine ("Please select a Person or Creature to attack.");
             else
                 if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person) != null)
                     if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == person).Health == 0)

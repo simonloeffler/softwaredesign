@@ -6,7 +6,7 @@ namespace Abschlussaufgabe___TextAdventure
     class Creature: GameObject  
     {
         public int Health {get; protected set;}
-        public int Damage {get; protected set;}
+        protected int Damage {get; set;}
         public List<Item> Inventory {get; set;} = new List<Item>();
 
         public void Fight(Player player, NPC enemy)
@@ -76,7 +76,7 @@ namespace Abschlussaufgabe___TextAdventure
             }
         }
 
-        public void ExecuteHit (Creature attacker, Creature victim, bool hardHit)
+        private void ExecuteHit (Creature attacker, Creature victim, bool hardHit)
         {
             Random rnd = new Random();
             int chanceToHit;
