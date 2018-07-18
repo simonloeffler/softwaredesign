@@ -15,7 +15,7 @@ namespace Abschlussaufgabe___TextAdventure
             Name = name;
             Description = description;
             Health = health;
-            Damage = damage;
+            _damage = damage;
             IsActive = isActive;
             IsAggressive = isAggressive;
             CanSpeak = canSpeak;

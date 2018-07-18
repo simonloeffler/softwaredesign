@@ -6,23 +6,23 @@ namespace Abschlussaufgabe___TextAdventure
 {
     class Player: Creature
     {
-        private static Player _instance;
+        private static Player _instance {get; set;}
 
         public List<PlayerDialogModel> Dialogs {get; set;} = new List<PlayerDialogModel>();
-        private Room CurrentRoom {get; set;}
-        private int BaseDamage {get; set;}
-        private Weapon EquippedWeapon {get; set;}
-        private int MaxHealth {get; set;}
+        private Room _currentRoom {get; set;}
+        private int _baseDamage {get; set;}
+        private Weapon _equippedWeapon {get; set;}
+        private int _maxHealth {get; set;}
 
         private Player (string name, string description, int maxHealth, int baseDamage, Room currentRoom)
         {
             Name = name;
             Description = description;
-            MaxHealth = maxHealth;
-            Health = MaxHealth;
-            BaseDamage = baseDamage;
-            Damage = BaseDamage;
-            CurrentRoom = currentRoom;
+            _maxHealth = maxHealth;
+            Health = _maxHealth;
+            _baseDamage = baseDamage;
+            _damage = _baseDamage;
+            _currentRoom = currentRoom;
         }
 
         public static void Create (string name, string description, int maxHealth, int baseDamage, Room currentRoom)
@@ -64,12 +64,12 @@ namespace Abschlussaufgabe___TextAdventure
         public void PlayerInfo ()
         {
             Console.WriteLine("Your stats:");
-            Console.WriteLine("Health: " + Health + " / " + MaxHealth);
-            Console.WriteLine("Damage: " + Damage + " (= base damage + weapon damage)");
-            if(EquippedWeapon != null)
+            Console.WriteLine("Health: " + Health + " / " + _maxHealth);
+            Console.WriteLine("Damage: " + _damage + " (= base damage + weapon damage)");
+            if(_equippedWeapon != null)
             {
-                Console.WriteLine("Equipped weapon: " + EquippedWeapon.Name);
-                Console.WriteLine("Equipped weapon damage: " + EquippedWeapon.Damage);
+                Console.WriteLine("Equipped weapon: " + _equippedWeapon.Name);
+                Console.WriteLine("Equipped weapon damage: " + _equippedWeapon.Damage);
             }
             else
                 Console.WriteLine("Equipped weapon: none");  
@@ -86,24 +86,24 @@ namespace Abschlussaufgabe___TextAdventure
 
         public void Look ()
         {
-            Console.WriteLine("You are looking around in the " + CurrentRoom.Name + ":");
-            Console.WriteLine(CurrentRoom.Description);
+            Console.WriteLine("You are looking around in the " + _currentRoom.Name + ":");
+            Console.WriteLine(_currentRoom.Description);
             Console.WriteLine(Environment.NewLine + "The following places are nearby:");
-            foreach(KeyValuePair<TextAdventure.Direction, Room> neighbor in CurrentRoom.Neighbors)
+            foreach(KeyValuePair<TextAdventure.Direction, Room> neighbor in _currentRoom.Neighbors)
             {
                 Console.WriteLine("   You can reach the " + neighbor.Value.Name + " in the " + neighbor.Key + ".");
             }
             Console.WriteLine(Environment.NewLine + "The persons in the location are:");
-            if (!CurrentRoom.Npcs.Any())
+            if (!_currentRoom.Npcs.Any())
                 Console.WriteLine("   none");
-            foreach (Npc npc in CurrentRoom.Npcs)
+            foreach (Npc npc in _currentRoom.Npcs)
             {
                 Console.WriteLine("   " + npc.Name);
             }
             Console.WriteLine(Environment.NewLine + "Also you can see the following things nearby:");
-            if (!CurrentRoom.Items.Any())
+            if (!_currentRoom.Items.Any())
                 Console.WriteLine("   none");
-            foreach (Item item in CurrentRoom.Items)
+            foreach (Item item in _currentRoom.Items)
                 Console.WriteLine("   " + item.Name);
         }
 
@@ -113,9 +113,9 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Object to look at.");
             else
             {
-                GameObject subject = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
+                GameObject subject = _currentRoom.Items.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
-                    subject = CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
+                    subject = _currentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
                     subject = Inventory.Find(x => x.Name.ToLower() == thing);
                 if(subject == null)
@@ -143,9 +143,9 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Person or Creature to attack.");
             else
             {
-                Npc victim = CurrentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
+                Npc victim = _currentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
                 if(victim == null)
-                    if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
+                    if (_currentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
                         Console.WriteLine ("You can't fight this...");
                     else
                         Console.WriteLine ("There is no " + person + " nearby.");
@@ -162,9 +162,9 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Person or Creature to attack.");
             else
             {
-                Npc dialogPartner = CurrentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
+                Npc dialogPartner = _currentRoom.Npcs.Find(x =>  x.Name.ToLower() == person);
                 if(dialogPartner == null)
-                    if (CurrentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
+                    if (_currentRoom.Items.Find(x =>  x.Name.ToLower() == person) != null)
                         Console.WriteLine ("You can't speak with this...");
                     else
                         Console.WriteLine ("There is no " + person + " nearby.");
@@ -181,10 +181,10 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a object or corpse to loot.");
             else 
             {
-                if(CurrentRoom.Items.Find(x => x.Name.ToLower() == thing) != null)
-                    if (CurrentRoom.Items.Find(x => x.Name.ToLower() == thing).GetType() == typeof(Crate))
+                if(_currentRoom.Items.Find(x => x.Name.ToLower() == thing) != null)
+                    if (_currentRoom.Items.Find(x => x.Name.ToLower() == thing).GetType() == typeof(Crate))
                     {
-                        Crate subject = (Crate) CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
+                        Crate subject = (Crate) _currentRoom.Items.Find(x => x.Name.ToLower() == thing);
                         if (subject.Key != null)
                             if(Inventory.Contains(subject.Key))
                             {
@@ -214,9 +214,9 @@ namespace Abschlussaufgabe___TextAdventure
                     else
                         Console.WriteLine("It's not possible to loot that.");
                     
-                else if (CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing) != null)
+                else if (_currentRoom.Npcs.Find(x => x.Name.ToLower() == thing) != null)
                 {
-                    Npc subject = CurrentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
+                    Npc subject = _currentRoom.Npcs.Find(x => x.Name.ToLower() == thing);
                     if (subject.Health == 0)
                     {
                         Console.WriteLine("Things you got from " + subject.Name + "s corpse:");
@@ -246,22 +246,22 @@ namespace Abschlussaufgabe___TextAdventure
             switch (direction)
             {
                 case "north": case "n":
-                    CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.north, out nextRoom);
+                    _currentRoom.Neighbors.TryGetValue(TextAdventure.Direction.north, out nextRoom);
                     validDirection = true;
                     selectedDirection = TextAdventure.Direction.north;
                     break;
                 case "south": case "s":
-                    CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.south, out nextRoom);
+                    _currentRoom.Neighbors.TryGetValue(TextAdventure.Direction.south, out nextRoom);
                     validDirection = true;
                     selectedDirection = TextAdventure.Direction.south;
                     break;
                 case "east": case "e":
-                    CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.east, out nextRoom);
+                    _currentRoom.Neighbors.TryGetValue(TextAdventure.Direction.east, out nextRoom);
                     validDirection = true;
                     selectedDirection = TextAdventure.Direction.east;
                     break;
                 case "west": case "w":
-                    CurrentRoom.Neighbors.TryGetValue(TextAdventure.Direction.west, out nextRoom);
+                    _currentRoom.Neighbors.TryGetValue(TextAdventure.Direction.west, out nextRoom);
                     validDirection = true;
                     selectedDirection = TextAdventure.Direction.west;
                     break;
@@ -275,11 +275,11 @@ namespace Abschlussaufgabe___TextAdventure
             else if (nextRoom != null)
                 if(nextRoom.Key != null && Inventory.Contains(nextRoom.Key) || nextRoom.Key == null)
                 {
-                    CurrentRoom = nextRoom;
-                    Console.WriteLine("You are now in the " + CurrentRoom.Name + ".");
+                    _currentRoom = nextRoom;
+                    Console.WriteLine("You are now in the " + _currentRoom.Name + ".");
                     Look();
-                    if(!CurrentRoom.AlreadyVisited)
-                        CurrentRoom.StartUp();
+                    if(!_currentRoom.AlreadyVisited)
+                        _currentRoom.StartUp();
                 }
                 else
                     Console.WriteLine("You can't go there - you are missing the right key!");  
@@ -291,7 +291,7 @@ namespace Abschlussaufgabe___TextAdventure
                 Console.WriteLine ("Please select a Object to pick up.");
             else
             {
-                Item item = CurrentRoom.Items.Find(x => x.Name.ToLower() == thing);
+                Item item = _currentRoom.Items.Find(x => x.Name.ToLower() == thing);
             
                 if (item == null)
                     Console.WriteLine("There is no item with the name '" + thing + "' in the room.");
@@ -301,7 +301,7 @@ namespace Abschlussaufgabe___TextAdventure
                     else
                     {
                         Inventory.Add(item);
-                        CurrentRoom.Items.Remove(item);
+                        _currentRoom.Items.Remove(item);
                         Console.WriteLine("You added to your inventory: " + item.Name);
                     }
             }
@@ -318,7 +318,7 @@ namespace Abschlussaufgabe___TextAdventure
                     Console.WriteLine("There is no item with the name '" + thing + "' in your inventory.");
                 else
                 {
-                    CurrentRoom.Items.Add(item);
+                    _currentRoom.Items.Add(item);
                     Inventory.Remove(item);
                     Console.WriteLine("You dropped a " + item.Name + " from your inventory.");
                 }
@@ -338,16 +338,16 @@ namespace Abschlussaufgabe___TextAdventure
                     if(item is Weapon)
                     {
                         Weapon newWeapon = (Weapon) item;
-                        EquippedWeapon = newWeapon;
-                        Damage = BaseDamage + newWeapon.Damage;
-                        Console.WriteLine("You equipped " + newWeapon.Name + " as your Weapon. Your damage is now " + Damage + ".");
+                        _equippedWeapon = newWeapon;
+                        _damage = _baseDamage + newWeapon.Damage;
+                        Console.WriteLine("You equipped " + newWeapon.Name + " as your Weapon. Your damage is now " + _damage + ".");
                     } 
                     else if (item is Potion)
                     {
                         Potion potion = (Potion) item;
                         Health += potion.Cure;
-                        if(Health >= MaxHealth)
-                            Health = MaxHealth;
+                        if(Health >= _maxHealth)
+                            Health = _maxHealth;
                         Inventory.Remove(potion);
                         Console.WriteLine("You consumed " + potion.Name  + ". You now have " + Health + " healthpoints.");
                     } 
@@ -358,11 +358,11 @@ namespace Abschlussaufgabe___TextAdventure
 
         public void CheckWeapon() 
         {
-            if(EquippedWeapon != null)
-                if(Inventory.Find(x => x.Name == EquippedWeapon.Name) == null)
+            if(_equippedWeapon != null)
+                if(Inventory.Find(x => x.Name == _equippedWeapon.Name) == null)
                 {
-                    Damage = BaseDamage;
-                    EquippedWeapon = null;
+                    _damage = _baseDamage;
+                    _equippedWeapon = null;
                 }
         }
 

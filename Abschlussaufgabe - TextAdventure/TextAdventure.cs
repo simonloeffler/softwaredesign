@@ -7,11 +7,13 @@ namespace Abschlussaufgabe___TextAdventure
     static class TextAdventure
     {
         public static Player Player {get; private set;}
-        private static Item WinningItem {get; set;}
-        private static List<Room> Rooms {get; set;} = new List<Room>();
-        private static List<Item> Items {get; set;} = new List<Item>();
-        private static List<Npc> Npcs {get; set;} = new List<Npc>();
+        private static Item _winningItem {get; set;}
+        private static List<Room> _rooms {get; set;} = new List<Room>();
+        private static List<Item> _items {get; set;} = new List<Item>();
+        private static List<Npc> _npcs {get; set;} = new List<Npc>();
         public static bool IsFinished {get; set;} = false;
+
+        //private static Dictionary<string, Action<string>> commands = new Dictionary<string, Action<string>>(); 
         
         static void Main(string[] args)
         {
@@ -22,11 +24,25 @@ namespace Abschlussaufgabe___TextAdventure
             Console.WriteLine("And just in this moment you realise that your throat is really dry and you're very thirsty. You should find some booze quickly.");
             Player.Look();
 
+            // commands.Add("la", (parameter) => 
+            // {
+            //     Player.LookAt(parameter);
+            // });                                  --> add all functions to dictionary...
+
+            // if (!commands.ContainsKey(command)){
+            //     Console.WriteLine("Unknwon Command");
+            // } 
+            // else
+            // {
+            //     var func = commands[command];      --> get function from dictionary ans set delegate
+            //     func(parameter);                   --> call delegate
+            // }
+
             for (;;)
             {
-                if(Player.Inventory.Contains(WinningItem))
+                if(Player.Inventory.Contains(_winningItem))
                 {
-                    ConsoleWriteGreen("You got the " + WinningItem.Name + " and thus you won the game!");
+                    ConsoleWriteGreen("You got the " + _winningItem.Name + " and thus you won the game!");
                     IsFinished = true;
                 }
 
@@ -107,43 +123,43 @@ namespace Abschlussaufgabe___TextAdventure
 
             #region Items
 
-            Items.Add(new Item("Cryptkey", "It's a really old key shaped like a bone.", true));
-            Items.Add(new Item("Cratekey", "Just an ordinary key.", true));
+            _items.Add(new Item("Cryptkey", "It's a really old key shaped like a bone.", true));
+            _items.Add(new Item("Cratekey", "Just an ordinary key.", true));
 
-            Items.Add(new Item("Stone", "And the winner is Rocky!", true));
-            Items.Add(new Item("Ring", "It's the servants ring!", true));
-            Items.Add(new Item("Well", "Well, well, well. What do we have here?", false));
-            Items.Add(new Item("Gravestone", "On the Gravestone it says: 'R.I.P Smitty Werbenjagermanjensen - he was the real #1'", false));
-            Items.Add(new Item("Cross", "On the Cross it says: 'Grave of an unknwon hero - fallen while hunting wild hogs.'", false));
-            Items.Add(new Item("Grave", "On the Grave it says: 'Arouse me from sleep on the 30th September.'", false));
-            Items.Add(new Item("Mirror", "A bored looking face in front of a computer.", false));
-            Items.Add(new Item("Barrel", "Not a single drop inside...", false));
+            _items.Add(new Item("Stone", "And the winner is Rocky!", true));
+            _items.Add(new Item("Ring", "It's the servants ring!", true));
+            _items.Add(new Item("Well", "Well, well, well. What do we have here?", false));
+            _items.Add(new Item("Gravestone", "On the Gravestone it says: 'R.I.P Smitty Werbenjagermanjensen - he was the real #1'", false));
+            _items.Add(new Item("Cross", "On the Cross it says: 'Grave of an unknwon hero - fallen while hunting wild hogs.'", false));
+            _items.Add(new Item("Grave", "On the Grave it says: 'Arouse me from sleep on the 30th September.'", false));
+            _items.Add(new Item("Mirror", "A bored looking face in front of a computer.", false));
+            _items.Add(new Item("Barrel", "Not a single drop inside...", false));
 
-            Items.Add(new Weapon("Stick", "It's a bit sticky.", true, 1));
-            Items.Add(new Weapon("Hammer", "Not very dangerous...", true, 5));
-            Items.Add(new Weapon("Shovel", "It´s a heavy shovel with a long shaft.", true, 8));
-            Items.Add(new Weapon("Dagger", "A nice dagger with some ornaments on the handle.", true, 11));
-            Items.Add(new Weapon("Sword", "An old, rusty sword.", true, 15));
+            _items.Add(new Weapon("Stick", "It's a bit sticky.", true, 1));
+            _items.Add(new Weapon("Hammer", "Not very dangerous...", true, 5));
+            _items.Add(new Weapon("Shovel", "It´s a heavy shovel with a long shaft.", true, 8));
+            _items.Add(new Weapon("Dagger", "A nice dagger with some ornaments on the handle.", true, 11));
+            _items.Add(new Weapon("Sword", "An old, rusty sword.", true, 15));
 
-            Items.Add(new Potion("Potion", "Smells sweet.", true, 50));
-            Items.Add(new Potion("Apple", "It's a bit crumpled.", true, 15));
-            Items.Add(new Potion("Bread", "Not fresh but still eatable.", true, 20));
-            Items.Add(new Potion("Booze", "Just perfect.", true, 100));
+            _items.Add(new Potion("Potion", "Smells sweet.", true, 50));
+            _items.Add(new Potion("Apple", "It's a bit crumpled.", true, 15));
+            _items.Add(new Potion("Bread", "Not fresh but still eatable.", true, 20));
+            _items.Add(new Potion("Booze", "Just perfect.", true, 100));
 
-            Items.Add(new Crate("Crate", "A big, heavy crate. Seems like you need a key to open it.", false, GetItemByName("Cratekey")));
+            _items.Add(new Crate("Crate", "A big, heavy crate. Seems like you need a key to open it.", false, GetItemByName("Cratekey")));
 
-            WinningItem = GetItemByName("Booze");
+            _winningItem = GetItemByName("Booze");
 
             #endregion
 
             #region Rooms
 
-            Rooms.Add(new Room("Yard", "It's a big yard with a hard ground.", null));
-            Rooms.Add(new Room("Tavern", "A cozy tavern. Unfortunately you have no money.", null));
-            Rooms.Add(new Room("Stables", "Small stables with no horses at all.", null));
-            Rooms.Add(new Room("Graveyard", "A spooky graveyard with some old gravestones.", null));
-            Rooms.Add(new Room("Crypt", "It's really dark in here. You can barely see a thing.", GetItemByName("Cryptkey")));
-            Rooms.Add(new Room("Cellar", "A cold stone cellar with all kinds of stuff. Maybe you can find something to ease your thirst.", null));
+            _rooms.Add(new Room("Yard", "It's a big yard with a hard ground.", null));
+            _rooms.Add(new Room("Tavern", "A cozy tavern. Unfortunately you have no money.", null));
+            _rooms.Add(new Room("Stables", "Small stables with no horses at all.", null));
+            _rooms.Add(new Room("Graveyard", "A spooky graveyard with some old gravestones.", null));
+            _rooms.Add(new Room("Crypt", "It's really dark in here. You can barely see a thing.", GetItemByName("Cryptkey")));
+            _rooms.Add(new Room("Cellar", "A cold stone cellar with all kinds of stuff. Maybe you can find something to ease your thirst.", null));
 
             #endregion
 
@@ -206,10 +222,10 @@ namespace Abschlussaufgabe___TextAdventure
 
             #region Npcs
 
-            Npcs.Add(new Npc("Servant", "He looks bored and somehow a bit worried.", 100, 15, false, false, true));
-            Npcs.Add(new Npc("Orlan", "Standing behind the bar it seems like he is the owner of the tavern.", 100, 20, true, false, true));
-            Npcs.Add(new Npc("Rat", "A nasty, big rat.", 60, 5, false, true, false));
-            Npcs.Add(new Npc("Skeleton", "Maybe he should've drunken some more milk.", 90, 8, true, true, true));
+            _npcs.Add(new Npc("Servant", "He looks bored and somehow a bit worried.", 100, 15, false, false, true));
+            _npcs.Add(new Npc("Orlan", "Standing behind the bar it seems like he is the owner of the tavern.", 100, 20, true, false, true));
+            _npcs.Add(new Npc("Rat", "A nasty, big rat.", 60, 5, false, true, false));
+            _npcs.Add(new Npc("Skeleton", "Maybe he should've drunken some more milk.", 90, 8, true, true, true));
 
             #endregion
 
@@ -287,22 +303,22 @@ namespace Abschlussaufgabe___TextAdventure
 
         private static Room GetRoomByName(string name)
         {
-            return Rooms.Find(x => x.Name.ToLower() == name.ToLower());
+            return _rooms.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
         private static Item GetItemByName(string name)
         {
-            return Items.Find(x => x.Name.ToLower() == name.ToLower());
+            return _items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
         private static Crate GetCrateByName(string name)
         {
-            return (Crate) Items.Find(x => x.Name.ToLower() == name.ToLower());
+            return (Crate) _items.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
         private static Npc GetNpcByName(string name)
         {
-            return Npcs.Find(x => x.Name.ToLower() == name.ToLower());
+            return _npcs.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
         private static PlayerDialogModel GetPlayerDialogModelByDialogPartnerName(string name)

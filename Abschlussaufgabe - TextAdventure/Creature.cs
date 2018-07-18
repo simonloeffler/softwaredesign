@@ -6,7 +6,7 @@ namespace Abschlussaufgabe___TextAdventure
     class Creature: GameObject  
     {
         public int Health {get; protected set;}
-        protected int Damage {get; set;}
+        protected int _damage {get; set;}
         public List<Item> Inventory {get; set;} = new List<Item>();
 
         public void Fight(Player player, Npc enemy)
@@ -98,7 +98,7 @@ namespace Abschlussaufgabe___TextAdventure
                 TextAdventure.ConsoleWriteBlue(attacker.Name + " missed!");
             else 
             {
-                var damage = attacker.Damage * rnd.Next(minDamageMultiplier, maxDamageMultiplier+1);
+                var damage = attacker._damage * rnd.Next(minDamageMultiplier, maxDamageMultiplier+1);
                 victim.Health -= damage;
                 if (victim.Health <= 0)
                     victim.Health = 0;
